@@ -1,0 +1,29 @@
+@keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h1.animated-title{
+    text-align: center;
+  }
+  .animated-title {
+    animation: fadeSlideIn 1.5s ease-out forwards;
+  }
+  
+  .animated-subtext {
+    opacity: 0;
+    animation: fadeSlideIn 1.5s ease-out forwards;
+    animation-delay: 1.6s;
+  }
+  
+  .animated-buttons {
+    opacity: 0;
+    animation: fadeSlideIn 1.5s ease-out forwards;
+    animation-delay: 2.2s;
+  }
+  

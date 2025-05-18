@@ -1,0 +1,21 @@
+@media (max-width: 1080px) {
+    .painel-operador {
+      padding: 15px;
+    }
+  
+    .tarefas-lista {
+      grid-template-columns: 1fr;
+    }
+  
+    .mapa-container {
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card,
+    .card-form {
+      padding: 28px 18px;
+    }
+  
+  }

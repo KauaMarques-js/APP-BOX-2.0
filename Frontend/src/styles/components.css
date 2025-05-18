@@ -1,0 +1,113 @@
+.form-card {
+  padding: 32px 24px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.form-card h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+input {
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 14px;
+  border: 2px solid #ccc;
+}
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="password"],
+.form-card input[type="file"] {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.form-card label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+button,
+.btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 12px;
+}
+button.submit-btn{
+  font-size: 1.6rem;
+}
+button:hover,
+.btn:hover {
+  background-color: #1e40af;
+  transform: scale(1.03);
+}
+
+.btn-excluir {
+  background-color: #dc2626;
+}
+.btn-excluir:hover {
+  background-color: #b91c1c;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  width: 100%;
+}
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.step {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+.step.active {
+  background: #007bff;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.select-field {
+  padding: 10px;
+  font-size: 1rem;
+  max-width: 300px;
+  border-radius: 8px;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
