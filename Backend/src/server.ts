@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import usuarioRoutes from './routes/usuarioRoutes';
-import tarefaRoutes from './routes/tarefaRoutes'; // <- confere se o caminho tá certo!
+import tarefaRoutes from './routes/tarefaRoutes'; 
 
 const app = express();
 app.use(cors());
@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(authRoutes);
 app.use(usuarioRoutes);
-app.use("/tarefas", tarefaRoutes);  // <- isso antes do 404!
+app.use("/tarefas", tarefaRoutes); 
 
 // 404
 app.use((_req: Request, res: Response) => {

@@ -12,6 +12,7 @@ import ControlTarefa from "./pages/subPages/ControlTarefas";
 import ConfirmarTarefa from "./pages/subPages/TarefasConfirmadas";
 import OperadorConfirmado from "./pages/subPages/OperadorConfirmado";
 import EmpresaControlePresencas from "./pages/subPages/EmpresaControlePr";
+import AdminTarefasConcluidas from "./pages/admin/AdminTarefasConcluidas";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const authData = JSON.parse(localStorage.getItem("authData") || "{}");
@@ -94,6 +95,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={["admin"]}>
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+           <Route
+          path="/Tarefas-Export/*"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <AdminTarefasConcluidas/>
             </ProtectedRoute>
           }
         />

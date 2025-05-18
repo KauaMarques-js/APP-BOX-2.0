@@ -1,0 +1,90 @@
+.painel-admin {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Títulos */
+  .painel-admin h1,
+  .painel-admin h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  /* Controles (filtro + botão exportar) */
+  .controles-admin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .filtro-data label {
+    margin-right: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .filtro-data input[type="date"] {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-exportar,
+  .btn-exportar-individual,
+  .btn-detalhes {
+    background-color: #2d89ef;
+    border: none;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+  
+  .btn-exportar:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+  }
+  
+  .btn-exportar:hover:not(:disabled),
+  .btn-exportar-individual:hover,
+  .btn-detalhes:hover {
+    background-color: #1b5dbf;
+  }
+  
+ 
+  .tabela-container {
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  .tabela-tarefas {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  .tabela-tarefas th,
+  .tabela-tarefas td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+  
+  .tabela-tarefas th {
+    background-color: #f4f6f8;
+    font-weight: 600;
+    color: #555;
+  }
+  

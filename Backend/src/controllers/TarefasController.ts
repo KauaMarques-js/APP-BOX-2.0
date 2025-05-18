@@ -233,3 +233,22 @@ export const reativarTarefa = async (req: Request, res: Response): Promise<Respo
     return res.status(500).json({ mensagem: "Erro ao reativar tarefa", erro: errorMessage });
   }
 };
+
+export async function listarTarefasConcluidas(_: Request, res: Response) {
+  try {
+    const tarefas = await getAllAsync(`
+      SELECT t.*, 
+             criador.email AS criador_email, criador.cpf AS criador_cpf,
+             operador.nome AS operador_nome, operador.cpf AS operador_cpf
+      FROM tarefas t
+      JOIN usuarios criador ON t.criador_id = criador.id
+      LEFT JOIN usuarios operador ON t.operador_id = operador.id
+      WHERE t.confirmado = 1
+    `);
+
+    res.json(tarefas);
+  } catch (error) {
+    console.error('Erro ao buscar tarefas concluídas:', error);
+    res.status(500).json({ erro: 'Erro ao buscar tarefas concluídas' });
+  }
+}

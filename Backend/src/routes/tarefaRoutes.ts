@@ -5,7 +5,8 @@ import {
   atualizarTarefa, 
   concluirTarefa,
   cancelarPresenca,
-  reativarTarefa    // <- importar aqui
+  reativarTarefa, 
+  listarTarefasConcluidas
 } from '@/controllers/TarefasController';
 
 const router = express.Router();
@@ -15,6 +16,6 @@ router.get('/', listarTarefas);
 router.put('/:id', atualizarTarefa);
 router.put('/:id/concluir', concluirTarefa);
 router.put('/:id/cancelar', cancelarPresenca);
-router.put('/:id/reativar', reativarTarefa);  // <- rota para reativar tarefa
-
+router.put('/:id/reativar', reativarTarefa);  
+router.get('/concluidas', listarTarefasConcluidas);
 export default router;

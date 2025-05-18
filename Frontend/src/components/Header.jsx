@@ -30,8 +30,17 @@ export default function Header() {
         {isLogado && role === "operador" && (
           <>
             <Link to="/painel-operador" className="nav-link">Trabalhos Disponiveis</Link>
+            <br />
             <Link to="/operador-confirmado" className="nav-link">Trabalhos Confrimados</Link>
 
+
+          </>
+        )}
+          {isLogado && role === "admin" && (
+          <>
+           <Link to="/admin" className="nav-link">Administrar</Link>
+           <br />
+             <Link to="/Tarefas-Export" className="nav-link">Tarefas p/ EXportar</Link>
 
           </>
         )}

@@ -43,13 +43,14 @@ export default function OperadorConfirmado() {
         params: {
           operador_id: operadorId,
           operador_presente: 1,
-          ativa: 1
+          ativa: 1,
+          confirmado: 0 // Garante que só traz tarefas NÃO concluídas
         }
       });
 
-      // Filtra apenas tarefas que realmente pertencem ao operador
+      // Filtra apenas tarefas que pertencem ao operador e não estão concluídas
       const tarefasConfirmadas = resposta.data
-        .filter(tarefa => tarefa.operador_id === operadorId)
+        .filter(tarefa => tarefa.operador_id === operadorId && tarefa.confirmado !== 1)
         .map(tarefa => ({
           ...tarefa,
           data: formatarData(tarefa.data),
@@ -97,6 +98,12 @@ export default function OperadorConfirmado() {
       const tarefa = tarefas.find(t => t.id === id);
       if (!tarefa) {
         throw new Error("Tarefa não encontrada na lista local");
+      }
+
+      // Bloqueia cancelamento se a tarefa estiver concluída (redundante, mas segura)
+      if (tarefa.confirmado === 1) {
+        alert("Esta tarefa já foi concluída e não pode ser cancelada.");
+        return;
       }
 
       const response = await api.put(`/tarefas/${id}/cancelar`, {
@@ -148,7 +155,7 @@ export default function OperadorConfirmado() {
 
         <div className="tarefas-lista">
           {tarefasFiltradas.length === 0 ? (
-            <p >Você não tem tarefas confirmadas no momento.</p>
+            <p>Você não tem tarefas confirmadas pendentes no momento.</p>
           ) : (
             tarefasFiltradas.map((tarefa) => (
               <div key={tarefa.id} className="tarefa-card">
